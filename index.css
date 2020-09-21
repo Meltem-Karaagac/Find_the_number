@@ -1,0 +1,140 @@
+body {
+
+    background-image: url(https://lh5.ggpht.com/AH0nMIhkIorLbo8AUEwmvvrucCFi-hssiA6p25zrKXPdoRPK27AQM5rluE6Uz_bERdo=h500);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 6fr 5fr 2fr;
+    grid-template-rows: 3fr 1fr 1fr 2fr;
+    font-size: 50px;
+    color: black;
+   
+}
+
+.text {
+    grid-area: 2 / 2 / span 1 / span 1;
+    justify-items: center;
+}
+
+.form {
+    grid-area: 3 / 2 / span 1 / span 1;
+    
+}
+
+.submit{
+   
+    grid-area: 3/2/span 1/span 1;
+    height: 33px;
+    width: 200px;
+    border-radius: 5px;
+    border-color: seagreen;
+    margin-left: 680px;
+
+
+}
+
+#display{
+    margin-top: 75px;
+    grid-area: 3/2/span 1/span 1;
+
+}
+
+#guessArea{
+     height: 33px;
+     width: 200px;
+     border-radius: 5px;
+     border-color: seagreen;
+     box-shadow: 3px 3px 3px 3px seagreen;
+     font-size:24px;
+     text-align: center;
+     margin-top: 40px;
+    
+
+}
+#check{
+    height: 43px;
+    width: 100px;
+    border-radius: 20px;
+    border-color: seagreen;
+    box-shadow: 3px 3px 3px 3px seagreen;  
+    font-size: 18px  ;
+    font-weight: bold;
+    margin-top: 40px;
+    
+    
+}
+@media (max-width: 600px){
+
+    .main{
+      padding: 10px;
+      font-family: sans-serif;
+      color: white;
+      height: auto;
+      display: grid;
+      width: 100vw;
+      grid-template-columns: 100%;
+      grid-template-rows:   50px 40px 3px 30px ;
+      grid-template-areas: 
+     
+      "a"
+      "b"
+      "c"
+      "d"
+    }
+        
+    
+    
+    .text{
+      grid-area: a;
+      font-size: 20px;
+      color: black;
+      justify-content: center;
+      margin-top: 20px;
+    
+    }
+        
+    .form{
+      grid-area: b;
+      font-size: 20px;
+      color: black;
+    }
+        
+    .submit {
+      grid-area: c;
+      margin-left: 150px;
+      margin-top: 20px;
+      margin-left: 200px;
+    }
+    #display{
+        grid-area: d;
+        
+    
+    }
+        
+    
+    #guessArea{
+    height: 20px;
+    width: 100px;
+    border-radius: 5px;
+    border-color: seagreen;
+    box-shadow: 3px 3px 3px 3px seagreen;
+    font-size:14px;
+    text-align: center;
+           
+    }
+    #check{
+        height: 33px;
+        width: 80px;
+        border-radius: 20px;
+        border-color: seagreen;
+        box-shadow: 3px 3px 3px 3px seagreen;  
+        font-size: 14px  ;
+        font-weight: bold;
+      
+
+    }}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Number Guessing Game</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="text">
+            <p>Find the number (between 1 and 100) : </p>
+        </div>
+        <div class="form">
+            <label class="label" for="guessArea">Enter your number : </label>
+            <input type="text" id="guessArea" class="guessArea" />
+
+        </div>
+        <div class="submit">
+            <button id="check">CHECK</button>
+        </div>
+        <div id="display"></div>
+    </div>
+
+
+    <script>
+        const InputElement = document.querySelector("input")
+        const CheckElement = document.querySelector("button")
+        const wrap = document.getElementById("display")
+
+        const randomNumber = ((Math.random() * 100) + 1).toFixed().toString();
+
+        CheckElement.addEventListener("click", () => {
+
+
+            if (InputElement.value === "") {
+                if (wrap.childNodes.length >= 1) {
+                    return;
+                }
+                const error = document.createElement("div");
+                error.innerHTML = "Don't Leave Empty!"
+                const errorElement = wrap.appendChild(error)
+                setTimeout(() => {
+                    errorElement.remove()
+                }, 2000);
+                return;
+            };
+
+            if (isNaN(parseInt(InputElement.value)))
+                return alert("Please Enter a number!")
+
+            const numberGuessedCorrectyl = InputElement.value === randomNumber ? true : false;
+
+            if (numberGuessedCorrectyl) {
+                alert("You win! ");
+            } else {
+                alert(
+                    InputElement.value < randomNumber ? "Guess Higher" : "Guess Lower"
+                );
+            }
+            return InputElement.value = ""
+
+        });
+    </script>
+
+</body>
+
+</html>
