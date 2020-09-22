@@ -31,6 +31,8 @@
         const wrap = document.getElementById("display")
 
         const randomNumber = ((Math.random() * 100) + 1).toFixed().toString();
+        console.log(randomNumber)
+        var count = 0;
 
         CheckElement.addEventListener("click", () => {
 
@@ -39,6 +41,7 @@
                 if (wrap.childNodes.length >= 1) {
                     return;
                 }
+
                 const error = document.createElement("div");
                 error.innerHTML = "Don't Leave Empty!"
                 const errorElement = wrap.appendChild(error)
@@ -54,13 +57,16 @@
             const numberGuessedCorrectyl = InputElement.value === randomNumber ? true : false;
 
             if (numberGuessedCorrectyl) {
-                alert("You win! ");
+                alert("You win! in " + (count + 1) + " try");
+                count++;
             } else {
                 alert(
-                    InputElement.value < randomNumber ? "Guess Higher" : "Guess Lower"
+                    InputElement.value < randomNumber ? "Guess Higher" + " this is " + (count + 1) + " try" : "Guess Lower" + "this is " + (count + 1) + " try"
                 );
+                count++;
+
             }
-            return InputElement.value = ""
+            return count == 5 ? alert("You reached to max  test number") : InputElement.value = ""
 
         });
     </script>
